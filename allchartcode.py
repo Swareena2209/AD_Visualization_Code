@@ -29,11 +29,7 @@ def linegraph():
     plt.plot(data["Year"], data["France"], label="France")
     plt.plot(data["Year"], data["Australia"], label="Australia")
     plt.plot(data["Year"], data["Argentina"], label="Argentina")
-    plt.xlabel("Year") #call the xlabel function to assign the label name on X axis ie Year
-    plt.ylabel("Population") #call the ylabel function to assign the label name on Y axis ie Population
-    plt.title("HIV Prevalance") #call the title function to assign a title name to the chart
-    plt.legend()
-    plt.show() #call the show function to display the bar chart
+    display()  #call the defined displat function to print the graph
 
 #define a function barchart for representing the data in multiple barchart format for comparison
 def barchart():
@@ -42,12 +38,7 @@ def barchart():
     plt.bar(data["Year"]+1.5, data["Argentina"], label="Argentina", width = 1.5, color ='green')
     plt.bar(data["Year"]+3.0, data["France"], label="France", width = 1.5, color ='red' )
     plt.bar(data["Year"]+4.5, data["Australia"], label="Australia", width = 1.5, color ='orange')
-    
-    plt.xlabel("Year") #call the xlabel function to assign the label name on X axis ie Year
-    plt.ylabel("Population") #call the ylabel function to assign the label name on Y axis ie Population
-    plt.title("HIV Prevalance") #call the title function to assign a title name to the chart
-    plt.legend() # call the legend fucntion to display the label of each bar ie country name in this case
-    plt.show() #call the show function to display the bar chart
+    display() #call the defined displat function to print the graph
 
 #define a function named piechart for representing the data in the form of a piechart
 def piechart():
@@ -59,10 +50,14 @@ def piechart():
     plt.legend(bbox_to_anchor = (1,1),labels=read_data["Country"]) #call legend function to represent the labels in the chart, in this case Country name has been selected as the label for each wedge 
     plt.show() #call the show function to display the chart
 
+#define a fucntion display to print the line and bar graphs as they have similar X and Y axis labels
+def display():
+    plt.xlabel("Year") #call the xlabel function to assign the label name on X axis ie Year
+    plt.ylabel("Population") #call the ylabel function to assign the label name on Y axis ie Population
+    plt.title("HIV Prevalance") #call the title function to assign a title name to the chart
+    plt.legend() # call the legend fucntion to display the label of each bar ie country name in this case
+    plt.show() #call the show function to display the bar chart
     
 linegraph()# call the defined function linegraph to display the plot
 barchart()#call the defined function barchart for displaying the chart
 piechart()# call the defined function to display the data
-
-
-
